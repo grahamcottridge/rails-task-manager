@@ -1,34 +1,34 @@
 class TodosController < ApplicationController
 
-  def index         # GET /restaurants
+  def index
   	@todo = Todo.all
   end
 
-  def show          # GET /restaurants/:id
+  def show
     @todo = Todo.find(params[:id])
   end
 
-  def new           # GET /restaurants/new
+  def new
     @todo = Todo.new
   end
 
-  def create        # POST /restaurants
+  def create
     @todo = Todo.new(todo_params)
     @todo.save
     redirect_to todo_path(@todo)
   end
 
-  def edit          # GET /restaurants/:id/edit
+  def edit
     @todo = Todo.find(params[:id])
   end
 
-  def update        # PATCH /restaurants/:id
+  def update
     @todo = Todo.find(params[:id])
     @todo.update(todo_params)
     redirect_to todo_path(@todo)
   end
 
-  def destroy       # DELETE /restaurants/:id
+  def destroy
     @todo = Todo.find(params[:id])
     @todo.destroy
     redirect_to todos_path

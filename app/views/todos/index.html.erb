@@ -2,7 +2,7 @@
   <h2><%= todo.name %></h2>
   <p><%= todo.description %></p>
   <br></br>
-  <%= link_to todo.name, todo_path(todo.id) %>
+  <%= link_to "Show", todo_path(todo.id) %>
   <%= link_to "New", new_todo_path(todo.id) %>
   <%= link_to "Edit", edit_todo_path(todo.id) %>
   <%= link_to "Delete", todo_path(todo.id),
